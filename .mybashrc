@@ -1,0 +1,18 @@
+# some useful functions
+mkcd() {
+    mkdir "$1"
+    cd "$1"
+}
+
+# load in all aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# start tmux if not started already
+if command -v tmux>/dev/null; then
+    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
