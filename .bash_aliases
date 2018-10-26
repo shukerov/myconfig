@@ -29,11 +29,21 @@ alias bi='bundle install --path=vendor'
 # middleman aliases
 alias ms='be middleman s'
 
-# dir aliases UBUNTU
+# dir aliases
+alias dev='cd ~/development'
+alias blog='cd ~/development/myblog'
+alias bee='cd ~/development/beesbot'
+alias bay='cd ~/development/beesbot/bayphoto'
 alias cs='cd ~/CS'
-alias 365='cd ~/CS/365'
-alias 349='cd ~/CS/349'
+alias 202='cd ~/CS/202'
+alias 300='cd ~/CS/300'
 alias 307='cd ~/CS/307'
+alias 315='cd ~/CS/315'
+alias 349='cd ~/CS/349'
+alias 357='cd ~/CS/357'
+alias 365='cd ~/CS/365'
+alias 464='cd ~/CS/464'
 
 # dotfiles configuarion aliases
 alias config='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
+
