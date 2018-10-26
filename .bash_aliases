@@ -30,14 +30,10 @@ alias bi='bundle install --path=vendor'
 alias ms='be middleman s'
 
 # dir aliases UBUNTU
-alias cs='cd /home/shuk/data/CalPoly/CS'
-alias dev='cd /home/shuk/development'
-alias blog='cd /home/shuk/development/myblog'
-alias bee='cd /home/shuk/development/beesbot'
-alias bay='cd /home/shuk/development/beesbot/bayphoto'
-alias 365='cd /home/shuk/data/CalPoly/CS/365'
-alias 349='cd /home/shuk/data/CalPoly/CS/349'
-alias 307='cd /home/shuk/data/CalPoly/CS/307'
+alias cs='cd ~/CS'
+alias 365='cd ~/CS/365'
+alias 349='cd ~/CS/349'
+alias 307='cd ~/CS/307'
 
 # dotfiles configuarion aliases
-alias config='/usr/bin/git --git-dir=/home/shuk/.myconfig/ --work-tree=/home/shuk'
+alias config='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
