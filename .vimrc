@@ -1,3 +1,16 @@
+" vundle setup through line 11
+set nocompatible              " be improved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 " tabs and other settings
 set tabstop=3
 set shiftwidth=3
