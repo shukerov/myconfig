@@ -13,8 +13,8 @@ alias dos2unix="sed $'s/\r//' -i "
 alias tmux="tmux -2"
 
 # ssh aliases
-alias taylor='ssh stoyan@thurlow.io'
-alias taylorsftp='sftp stoyan@thurlow.io'
+alias taylor='ssh stoyan@home.thurlow.io'
+alias taylorsftp='sftp stoyan@home.thurlow.io'
 alias unix1='ssh sshukero@unix1.csc.calpoly.edu'
 alias unix2='ssh sshukero@unix2.csc.calpoly.edu'
 alias unix3='ssh sshukero@unix3.csc.calpoly.edu'
