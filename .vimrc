@@ -29,8 +29,7 @@ set noeb vb t_vb=
 " colors
 " set background=dark
 set t_Co=256
-let g:solarized_termcolors=256
-colorscheme molokai
+colorscheme solarized
 
 " git configuration
 autocmd Filetype gitcommit setlocal spell textwidth=72
