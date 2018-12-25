@@ -7,6 +7,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -28,6 +30,7 @@ set noeb vb t_vb=
 " set background=dark
 set t_Co=256
 let g:solarized_termcolors=256
+colorscheme molokai
 
 " git configuration
 autocmd Filetype gitcommit setlocal spell textwidth=72
@@ -58,3 +61,7 @@ nmap j gj
 
 " command aliases for typoed commands
 command! Q q " both :q and :Q work identically
+
+" CtrlP configuration
+let g:ctrl_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
