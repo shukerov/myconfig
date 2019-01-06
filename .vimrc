@@ -7,6 +7,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'flazz/vim-colorschemes'
 
@@ -29,7 +31,8 @@ set noeb vb t_vb=
 " colors
 " set background=dark
 set t_Co=256
-colorscheme solarized
+syntax on
+colorscheme molokai
 
 " git configuration
 autocmd Filetype gitcommit setlocal spell textwidth=72
