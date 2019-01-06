@@ -31,8 +31,11 @@ set noeb vb t_vb=
 " colors
 " set background=dark
 set t_Co=256
-syntax on
 colorscheme molokai
+" enable syntax highlighting
+if !exists("g:syntax_on")
+   syntax enable
+endif
 
 " git configuration
 autocmd Filetype gitcommit setlocal spell textwidth=72
