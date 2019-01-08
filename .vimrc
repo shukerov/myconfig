@@ -11,9 +11,39 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'flazz/vim-colorschemes'
+" some racket plugins, just testing
+" Plugin 'vim-syntastic/syntastic'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'jpalardy/vim-slime'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" This is for racket
+set lisp " improves basic for indentation and web word hopping
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+let g:slime_target = "tmux"
 
 " tabs and other settings
 set tabstop=3
