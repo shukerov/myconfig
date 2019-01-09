@@ -48,3 +48,6 @@ alias 464='cd ~/CS/464'
 # dotfiles configuarion aliases
 alias config='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
 
+# School aliases
+# racket start with right parameters
+alias ratchet='racket -i -l typed/racket -l typed/rackunit'
