@@ -44,6 +44,10 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": "0.1"}
+xmap <leader>q <Plug>SlimeRegionSend
+nmap <leader>q <Plug>SlimeParagraphSend
+nmap <leader>rb :RainbowParenthesesToggle<CR>
 
 " tabs and other settings
 set tabstop=3
@@ -83,7 +87,7 @@ map <C-t> <esc>:tabnew<CR>
 map <C-x> <C-w>c
 
 " leader key setting
-let mapleader = "\<Space>"
+let mapleader = ","
 nmap <leader>vr :tabedit $MYVIMRC<CR>
 nmap <leader>so :source $MYVIMRC<CR> 
 
