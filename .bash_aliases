@@ -43,6 +43,7 @@ alias 349='cd ~/CS/349'
 alias 357='cd ~/CS/357'
 alias 365='cd ~/CS/365'
 alias 430='cd ~/CS/430'
+alias 453='cd ~/CS/453'
 alias 464='cd ~/CS/464'
 
 # dotfiles configuarion aliases
