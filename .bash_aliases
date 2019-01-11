@@ -9,6 +9,7 @@ alias gpr='git pull --rebase'
 alias glog='git log --all --graph --decorate'
 
 # others
+alias ll="ls -lah"
 alias dos2unix="sed $'s/\r//' -i "
 alias tmux="tmux -2"
 
