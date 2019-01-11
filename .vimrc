@@ -20,7 +20,7 @@ Plugin 'jpalardy/vim-slime'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" This is for racket
+" START RACKET
 set lisp " improves basic for indentation and web word hopping
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
@@ -48,6 +48,8 @@ let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane"
 xmap <leader>q <Plug>SlimeRegionSend
 nmap <leader>q <Plug>SlimeParagraphSend
 nmap <leader>rb :RainbowParenthesesToggle<CR>
+nmap <leader>cr :!racket %<CR>
+" END for RACKET
 
 " tabs and other settings
 set tabstop=3
