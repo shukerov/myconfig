@@ -17,6 +17,9 @@ Plugin 'wlangstroth/vim-racket'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'jpalardy/vim-slime'
 
+" plugins i should definitely try out
+" Plugin 'tpope/vim-fugitive'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -59,6 +62,7 @@ set expandtab
 set smarttab
 
 " set line numbers to true
+set relativenumber
 set number
 
 " disbale bell sound
@@ -95,6 +99,9 @@ nmap <leader>so :source $MYVIMRC<CR>
 
 " some general configurations
 set scrolloff=4 " Keep at lease 4 lines below cursor
+
+" show cursor position at all times
+set ruler
 
 " moving down within the same line
 nmap k gk
