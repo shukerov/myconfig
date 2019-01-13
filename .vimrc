@@ -18,7 +18,8 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'jpalardy/vim-slime'
 
 " plugins i should definitely try out
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive' " a fancy git wrapper
+Plugin 'junegunn/fzf.vim' " search through multiple files
 
 call vundle#end()            " required
 filetype plugin indent on    " required
