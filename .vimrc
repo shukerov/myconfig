@@ -10,7 +10,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive' " a fancy git wrapper
+Plugin 'tpope/vim-repeat' " lets you use . for repeating non-native commands
 Plugin 'flazz/vim-colorschemes'
+
 " some racket plugins, just testing
 " Plugin 'vim-syntastic/syntastic'
 Plugin 'wlangstroth/vim-racket'
@@ -18,7 +21,6 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'jpalardy/vim-slime'
 
 " plugins i should definitely try out
-Plugin 'tpope/vim-fugitive' " a fancy git wrapper
 Plugin 'junegunn/fzf.vim' " search through multiple files
 
 call vundle#end()            " required
