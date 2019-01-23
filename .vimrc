@@ -53,7 +53,7 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": "0.1"}
 xmap <leader>q <Plug>SlimeRegionSend
 nmap <leader>q <Plug>SlimeParagraphSend
-nmap <leader>rb :RainbowParenthesesToggle<CR>
+nmap <leader>rb :RainbowParenthesesToggle<CR> :RainbowParenthesesLoadSquare<CR>
 nmap <leader>cr :!racket %<CR>
 " END for RACKET
 
@@ -86,6 +86,9 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 " Ctrl + s for escape and write
 noremap <C-s> <esc>:w<CR>
 inoremap <C-s> <esc>:w<CR>
+
+" Ctrl + F for visually searching highlited text
+vnoremap <C-f> y<ESC>/<C-r>"<CR>
 
 " some suggestions from thoughtbot, everything below this line is from there bby
 " The ones I like will be kept and sorted
