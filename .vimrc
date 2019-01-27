@@ -55,7 +55,14 @@ xmap <leader>q <Plug>SlimeRegionSend
 nmap <leader>q <Plug>SlimeParagraphSend
 nmap <leader>rb :RainbowParenthesesToggle<CR> :RainbowParenthesesLoadSquare<CR>
 nmap <leader>cr :!racket %<CR>
+set colorcolumn=120
 " END for RACKET
+
+" START C
+nmap <leader>cc :!make<CR>
+nmap <leader>ct :!make test<CR>
+autocmd FileType c,cpp :setlocal commentstring=//\ %s
+" END C
 
 " tabs and other settings
 set tabstop=3
