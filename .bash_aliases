@@ -22,6 +22,9 @@ alias unix3='ssh sshukero@unix3.csc.calpoly.edu'
 alias unix4='ssh sshukero@unix4.csc.calpoly.edu'
 alias unix5='ssh sshukero@unix5.csc.calpoly.edu'
 
+# Docker aliases
+alias dc='docker-compose'
+
 # RoR aliases
 alias b='bundle'
 alias be='bundle exec'
@@ -51,5 +54,4 @@ alias 464='cd ~/CS/464'
 alias config='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
 
 # School aliases
-# racket start with right parameters
-alias ratchet='racket -i -l typed/racket -l typed/rackunit'
+alias ratchet='racket -i -l typed/racket -l typed/rackunit' # racket start with right parameters
