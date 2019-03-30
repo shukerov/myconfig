@@ -47,8 +47,8 @@ let g:rbpt_colorpairs = [
 
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ".1"}
+" let g:slime_target = "tmux"
+" let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ".1"}
 xmap <leader>q <Plug>SlimeRegionSend
 nmap <leader>q <Plug>SlimeParagraphSend
 nmap <leader>cr :!racket %<CR>
