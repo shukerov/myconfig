@@ -121,9 +121,7 @@ set scrolloff=4 " Keep at lease 4 lines below cursor
 set ruler
 
 " colors
-" set background=dark
-set t_Co=256
-colorscheme molokai
+colorscheme snazzy
 
 " enable syntax highlighting
 if !exists("g:syntax_on")
@@ -171,6 +169,13 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 command! Q q " both :q and :Q work identically
 
 " CtrlP configuration
-let g:ctrl_user_command = 'ag %s -l --hiden --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
+" new things, should be distributed as you go
+" let g:Hexokinase_highlighters = ['sign_column']
+" Enable for all filetypes
+" let g:Hexokinase_ftAutoload = ['*']
+
+" git gutter settings
+let g:gitgutter_grep = 'ag'
