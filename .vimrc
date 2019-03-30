@@ -3,19 +3,22 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-   Plugin 'VundleVim/Vundle.vim'          " manages all plugins and etc
-   Plugin 'ctrlpvim/ctrlp.vim'            " enables ctrl+p functionality similar to sublime
    Plugin 'airblade/vim-gitgutter'        " just a git gutter
-   Plugin 'tpope/vim-surround'            " surrounds text objects, words or lines
+   Plugin 'connorholyday/vim-snazzy'      " vim colorscheme
+   Plugin 'ctrlpvim/ctrlp.vim'            " enables ctrl+p functionality similar to sublime
+   Plugin 'eugen0329/vim-esearch'         " searching through multiple files
+   Plugin 'flazz/vim-colorschemes'        " colorschemes for vim
+   Plugin 'jpalardy/vim-slime'            " sending text from vim to a tmux pane
+   Plugin 'kien/rainbow_parentheses.vim'  " parentheses are colored, really useful for LISP languages
+   Plugin 'machakann/vim-highlightedyank' " flashes when you yank something
+   Plugin 'rhysd/committia.vim'           " really nice split screen in vim, with git changes and etc
+   Plugin 'RRethy/vim-hexokinase'         " adds colors rgb, and hex vals
    Plugin 'tpope/vim-commentary'          " for commenting lines out
    Plugin 'tpope/vim-fugitive'            " a fancy git wrapper
    Plugin 'tpope/vim-repeat'              " lets you use . for repeating non-native commands
-   Plugin 'flazz/vim-colorschemes'        " colorschemes for vim
-   Plugin 'machakann/vim-highlightedyank' " flashes when you yank something
-   Plugin 'eugen0329/vim-esearch'         " searching through multiple files
-   Plugin 'jpalardy/vim-slime'            " sending text from vim to a tmux pane
+   Plugin 'tpope/vim-surround'            " surrounds text objects, words or lines
+   Plugin 'VundleVim/Vundle.vim'          " manages all plugins and etc
    Plugin 'wlangstroth/vim-racket'        " package for racket
-   Plugin 'kien/rainbow_parentheses.vim'  " parentheses are colored, really useful for LISP languages
 call vundle#end()
 
 filetype on
