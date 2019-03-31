@@ -121,7 +121,8 @@ set scrolloff=4 " Keep at lease 4 lines below cursor
 set ruler
 
 " colors
-colorscheme snazzy
+colorscheme lena
+" colorscheme snazzy
 
 " enable syntax highlighting
 if !exists("g:syntax_on")
@@ -179,3 +180,5 @@ let g:ctrlp_use_caching = 0
 
 " git gutter settings
 let g:gitgutter_grep = 'ag'
+set clipboard=unnamedplus
+set clipboard=unnamed
