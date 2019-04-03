@@ -34,8 +34,9 @@ alias bi='bundle install --path=vendor'
 alias ms='be middleman s'
 
 # dir aliases
+alias down='cd ~/downloads'
 alias dev='cd ~/development'
-alias blog='cd ~/development/myblog'
+alias blog='cd ~/development/blog'
 alias bee='cd ~/development/beesbot'
 alias bay='cd ~/development/beesbot/bayphoto'
 alias cs='cd ~/CS'
@@ -49,6 +50,13 @@ alias 365='cd ~/CS/365'
 alias 430='cd ~/CS/430'
 alias 453='cd ~/CS/453'
 alias 464='cd ~/CS/464'
+
+# program shortcuts
+alias rst='exec $SHELL'
+alias show='kitty +kitten icat '
+alias cat='bat '
+alias v='vim .'
+alias hack='~/Downloads/matrix.sh'
 
 # dotfiles configuarion aliases
 alias config='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
