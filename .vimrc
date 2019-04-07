@@ -68,7 +68,7 @@ augroup myfiletypes
    autocmd FileType ruby,eruby,yaml setlocal ai sw=2 sts=2 et
    autocmd FileType ruby,eruby,yaml setlocal path+=lib
    " Make ?s part of words
-   " autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
+   autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
    
    " Racket   
    au BufReadPost *.rkt,*.rktl set filetype=racket
@@ -107,8 +107,8 @@ set smartindent
 " set line numbers to true
 set relativenumber
 set number
-
 " opens splits the the right by default
+
 set splitright
 
 " disbale bell sound
@@ -141,12 +141,13 @@ nmap 0 ^
 
 " some mappings
 map <C-t> <esc>:tabnew<CR>
-map <C-x> <C-w>c
 
+map <C-x> <C-w>c
 " leader key setting
 let mapleader = ","
 nmap <leader>vr :tabedit $MYVIMRC<CR>
 nmap <leader>so :source $MYVIMRC<CR> 
+nmap <leader>sy "+y
 
 " moving down within the same line
 nmap k gk
@@ -173,12 +174,8 @@ command! Q q " both :q and :Q work identically
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
+" set termguicolors
 " new things, should be distributed as you go
-" let g:Hexokinase_highlighters = ['sign_column']
+" let g:Hexokinase_highlighters = ['background']
 " Enable for all filetypes
 " let g:Hexokinase_ftAutoload = ['*']
-
-" git gutter settings
-let g:gitgutter_grep = 'ag'
-set clipboard=unnamedplus
-set clipboard=unnamed
