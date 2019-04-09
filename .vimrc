@@ -60,6 +60,8 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" there is a lot of repetition, below
+" need a better way to do this
 augroup myfiletypes
    autocmd!
 
@@ -69,7 +71,16 @@ augroup myfiletypes
    autocmd FileType ruby,eruby,yaml setlocal path+=lib
    " Make ?s part of words
    autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
-   
+
+   " Python
+   autocmd FileType python setlocal ai sw=2 sts=2 et
+   autocmd FileType python setlocal colorcolumn=80
+
+   " SQL
+   au BufReadPost *.sql set filetype=sql
+   autocmd FileType sql setlocal commentstring=--\ %s
+   autocmd FileType sql setlocal colorcolumn=120
+
    " Racket   
    au BufReadPost *.rkt,*.rktl set filetype=racket
    " au filetype racket set lisp
