@@ -117,6 +117,7 @@ set softtabstop=0
 set expandtab
 set smarttab
 set smartindent
+set cursorline
 
 " set line numbers to true
 set relativenumber
@@ -133,6 +134,10 @@ set scrolloff=4 " Keep at lease 4 lines below cursor
 
 " show cursor position at all times
 set ruler
+
+" save swap files somewhere else. got tired of ignoring them in .gitignore
+set backupdir=~/.tmp
+set directory=~/.tmp
 
 " colors
 colorscheme lena
@@ -174,12 +179,12 @@ execute "set <M-k>=\ek"
 nnoremap <M-k> k
 
 " Shift lines up and down
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+" nnoremap <A-j> :m .+1<CR>==
+" nnoremap <A-k> :m .-2<CR>==
+" inoremap <A-j> <Esc>:m .+1<CR>==gi
+" inoremap <A-k> <Esc>:m .-2<CR>==gi
+" vnoremap <A-j> :m '>+1<CR>gv=gv
+" vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " command aliases for typoed commands
 command! Q q " both :q and :Q work identically
@@ -193,6 +198,9 @@ let g:ctrlp_use_caching = 0
 " let g:Hexokinase_highlighters = ['background']
 " Enable for all filetypes
 " let g:Hexokinase_ftAutoload = ['*']
+" maximize current window
+nmap <leader>z :tabnew %<CR>
+
 " Close nerdtreewindow. Makes nerdtree and ctrlp play a bit more nicely
 " doesn't open in a split pane
 let g:ctrlp_dont_split = 'NERD'
