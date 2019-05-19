@@ -9,7 +9,8 @@ call vundle#begin()
    Plugin 'eugen0329/vim-esearch'         " searching through multiple files
    Plugin 'flazz/vim-colorschemes'        " colorschemes for vim
    Plugin 'jpalardy/vim-slime'            " sending text from vim to a tmux pane
-   Plugin 'kien/rainbow_parentheses.vim'  " parentheses are colored, really useful for LISP languages
+   Plugin 'junegunn/rainbow_parentheses.vim'  " parentheses are colored, really useful for LISP languages
+   " Plugin 'kien/rainbow_parentheses.vim'  " parentheses are colored, really useful for LISP languages
    Plugin 'machakann/vim-highlightedyank' " flashes when you yank something
    Plugin 'rhysd/committia.vim'           " really nice split screen in vim, with git changes and etc
    Plugin 'RRethy/vim-hexokinase'         " adds colors rgb, and hex vals
@@ -19,6 +20,7 @@ call vundle#begin()
    Plugin 'tpope/vim-surround'            " surrounds text objects, words or lines
    Plugin 'VundleVim/Vundle.vim'          " manages all plugins and etc
    Plugin 'wlangstroth/vim-racket'        " package for racket
+   Plugin 'scrooloose/nerdtree' " nerd tree stuff
 call vundle#end()
 
 filetype on
@@ -26,39 +28,40 @@ filetype indent on
 filetype plugin on
 
 " START RACKET
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+" let g:rbpt_colorpairs = [
+"     \ ['brown',       'RoyalBlue3'],
+"     \ ['Darkblue',    'SeaGreen3'],
+"     \ ['darkgray',    'DarkOrchid3'],
+"     \ ['darkgreen',   'firebrick3'],
+"     \ ['darkcyan',    'RoyalBlue3'],
+"     \ ['darkred',     'SeaGreen3'],
+"     \ ['darkmagenta', 'DarkOrchid3'],
+"     \ ['brown',       'firebrick3'],
+"     \ ['bray',        'RoyalBlue3'],
+"     \ ['black',       'SeaGreen3'],
+"     \ ['darkmagenta', 'DarkOrchid3'],
+"     \ ['Darkblue',    'firebrick3'],
+"     \ ['darkcyan',    'SeaGreen3'],
+"     \ ['darkred',     'DarkOrchid3'],
+"     \ ['darkgreen',   'RoyalBlue3'],
+"     \ ['red',         'firebrick3'],
+"     \ ]
 
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
+" let g:rbpt_max = 16
+" let g:rbpt_loadcmd_toggle = 0
+" nmap <leader>rb :RainbowParenthesesToggle<CR>:RainbowParenthesesLoadSquare<CR>:RainbowParenthesesLoadSquare<CR>
+" setting up rainbow parentheses
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
+nmap <leader>r :RainbowParentheses!!<CR>
+
 " let g:slime_target = "tmux"
 " let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ".1"}
 xmap <leader>q <Plug>SlimeRegionSend
 nmap <leader>q <Plug>SlimeParagraphSend
 nmap <leader>cr :!racket %<CR>
-nmap <leader>rb :RainbowParenthesesToggle<CR>:RainbowParenthesesLoadSquare<CR>:RainbowParenthesesLoadSquare<CR>
-
-" setting up rainbow parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 
 " there is a lot of repetition, below
 " need a better way to do this
@@ -190,3 +193,9 @@ let g:ctrlp_use_caching = 0
 " let g:Hexokinase_highlighters = ['background']
 " Enable for all filetypes
 " let g:Hexokinase_ftAutoload = ['*']
+" Close nerdtreewindow. Makes nerdtree and ctrlp play a bit more nicely
+" doesn't open in a split pane
+let g:ctrlp_dont_split = 'NERD'
+
+" toggle NERDtree
+nmap <Leader>kb :NERDTreeToggle<CR>
