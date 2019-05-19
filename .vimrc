@@ -198,6 +198,21 @@ let g:ctrlp_use_caching = 0
 " let g:Hexokinase_highlighters = ['background']
 " Enable for all filetypes
 " let g:Hexokinase_ftAutoload = ['*']
+
+" try these out later
+" nnoremap <Leader>vss :mksession! ~/.vim_session<CR>
+" nnoremap <Leader>vsl :source ~/.vim_session<CR>
+if has('mouse')
+   set mouse=a
+endif
+
+" change cursor in insert mode
+let &t_SI = "\<Esc>[6 q"
+" not sure what the other two really do yet
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+
 " maximize current window
 nmap <leader>z :tabnew %<CR>
 
