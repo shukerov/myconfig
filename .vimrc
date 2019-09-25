@@ -3,7 +3,7 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-   Plugin 'airblade/vim-gitgutter'        " just a git gutter
+   " Plugin 'airblade/vim-gitgutter'        " just a git gutter
    Plugin 'connorholyday/vim-snazzy'      " vim colorscheme
    Plugin 'ctrlpvim/ctrlp.vim'            " enables ctrl+p functionality similar to sublime
    Plugin 'eugen0329/vim-esearch'         " searching through multiple files
@@ -20,13 +20,20 @@ call vundle#begin()
    Plugin 'tpope/vim-surround'            " surrounds text objects, words or lines
    Plugin 'VundleVim/Vundle.vim'          " manages all plugins and etc
    Plugin 'wlangstroth/vim-racket'        " package for racket
-   Plugin 'scrooloose/nerdtree' " nerd tree stuff
+   Plugin 'scrooloose/nerdtree'           " nerd tree stuff
+   " THIS IS STILL BEING TESTED
+   Plugin 'pangloss/vim-javascript'       " javascript highlighting
+   Plugin 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}             " autocompleteion
+   Plugin 'honza/vim-snippets'
+   Plugin 'mattn/emmet-vim'
+
 call vundle#end()
 
 filetype on
 filetype indent on
 filetype plugin on
 
+let g:javascript_conceal_arrow_function = "⇒"
 " START RACKET
 " let g:rbpt_colorpairs = [
 "     \ ['brown',       'RoyalBlue3'],
@@ -63,11 +70,18 @@ xmap <leader>q <Plug>SlimeRegionSend
 nmap <leader>q <Plug>SlimeParagraphSend
 nmap <leader>cr :!racket %<CR>
 
+" tabs and other settings
+" set tabstop=3
+" set shiftwidth=3
+" set softtabstop=0
+set expandtab
+set smarttab
+set smartindent
+set cursorline
+
 " there is a lot of repetition, below
 " need a better way to do this
 augroup myfiletypes
-   autocmd!
-
    " Ruby
    " autoindent with two spaces, always expand tabs
    autocmd FileType ruby,eruby,yaml setlocal ai sw=2 sts=2 et
@@ -100,6 +114,8 @@ augroup myfiletypes
 
    " HTML/JS
    autocmd FileType html setlocal ai sw=2 sts=2 et
+   autocmd FileType javascript setlocal ai sw=2 sts=2 et 
+   autocmd FileType scss setlocal ai sw=2 sts=2 et 
 
    " GIT 
    autocmd Filetype gitcommit setlocal spell textwidth=72
@@ -109,15 +125,11 @@ augroup myfiletypes
    autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 augroup END
+
+set colorcolumn=80
       
-" tabs and other settings
-set tabstop=3
-set shiftwidth=3
-set softtabstop=0
-set expandtab
-set smarttab
-set smartindent
-set cursorline
+" removes delay on escape
+set timeoutlen=1000 ttimeoutlen=0
 
 " set line numbers to true
 set relativenumber
@@ -140,13 +152,14 @@ set backupdir=~/.tmp
 set directory=~/.tmp
 
 " colors
+" colorscheme BlackCherries
 colorscheme lena
 " colorscheme snazzy
 
 " enable syntax highlighting
-if !exists("g:syntax_on")
-   syntax enable
-endif
+" if !exists("g:syntax_on")
+"    syntax enable
+" endif
 
 " Ctrl + s for escape and write
 noremap <C-s> <esc>:w<CR>
@@ -162,11 +175,21 @@ nmap 0 ^
 map <C-t> <esc>:tabnew<CR>
 
 map <C-x> <C-w>c
-" leader key setting
+" LEADER KEY: setting
 let mapleader = ","
+nmap <leader>js :%!python -m json.tool<CR>
 nmap <leader>vr :tabedit $MYVIMRC<CR>
 nmap <leader>so :source $MYVIMRC<CR> 
 nmap <leader>sy "+y
+nmap <leader>al :tabnew ~/.bash_aliases<CR>
+"emmet keymap
+nmap <leader>j $<C-y>, 
+" select all
+nmap <leader><C-A> ggVG
+" open readme of directory. If it fails just sits at ctrlp
+nmap <leader>rd <C-p>README.md<C-t>
+" open blog in vim
+nmap <leader>blo :tabnew ~/development/blog/<CR>
 
 " moving down within the same line
 nmap k gk
@@ -222,3 +245,67 @@ let g:ctrlp_dont_split = 'NERD'
 
 " toggle NERDtree
 nmap <Leader>kb :NERDTreeToggle<CR>
+" enable line numbers
+let NERDTreeShowLineNumbers=1
+autocmd FileType nerdtree setlocal relativenumber
+
+
+" COC PLUG: bindings and settings
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? coc#_select_confirm() :
+"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+
+" from github by the author for both tab next
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#rpc#request('doKeymap', 'snippets-expand')
+  inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
+                                           \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+  " inoremap <silent><expr> <TAB>
+  "     \ pumvisible() ? coc#_select_confirm() :
+  "     \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  "     \ <SID>check_back_space() ? "\<TAB>" :
+  "     \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" EMMET PLUG: Enable just for html/css
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
+
+" SEARCH: setting up vim-easearch
+let g:esearch = {
+        \ 'adapter':          'ag',
+        \ 'backend':          'vim8',
+        \ 'out':              'win',
+        \ 'batch_size':       1000,
+        \ 'use':              ['visual', 'hlsearch', 'last'],
+        \ 'default_mappings': 1
+        \}
+
+hi ESearchMatch ctermfg=black ctermbg=white guifg=#000000 guibg=#E6E6FA
+" This should help you jump between matches
+" call esearch#out#win#map('<C-n>', 'next')
+" call esearch#out#win#map('<C-j>', 'next-file')
+
+" COCGIT:
+nmap gs <Plug>(coc-git-chunkinfo)
