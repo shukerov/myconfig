@@ -309,3 +309,12 @@ hi ESearchMatch ctermfg=black ctermbg=white guifg=#000000 guibg=#E6E6FA
 
 " COCGIT:
 nmap gs <Plug>(coc-git-chunkinfo)
+
+" SPELLCHECK:
+set spelllang=en
+" TIPS
+"-------------
+" press z= over word for suggestions
+" to turn on setlocal spell
+" to turn off setlocal nospell
+" ]s [s for finding misspelled words
