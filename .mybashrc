@@ -61,3 +61,8 @@ fi
 stty -ixon
 # export PATH="$HOME/.rbenv/bin:$PATH"
 # eval "$(rbenv init -)"
+
+# enabling kubectl autocompletion
+source <(kubectl completion bash)
+# enable shell completion for alias too
+complete -F __start_kubectl k
