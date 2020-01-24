@@ -73,9 +73,9 @@ nmap <leader>q <Plug>SlimeParagraphSend
 nmap <leader>cr :!racket %<CR>
 
 " tabs and other settings
-" set tabstop=3
-" set shiftwidth=3
 " set softtabstop=0
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 set smartindent
