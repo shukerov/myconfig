@@ -27,6 +27,7 @@ call vundle#begin()
    Plugin 'honza/vim-snippets'
    Plugin 'mattn/emmet-vim'
    Plugin 'markonm/traces.vim' " substitute highlight?
+   Plugin 'JamshedVesuna/vim-markdown-preview'  " markdown preview
 
 call vundle#end()
 
@@ -315,6 +316,11 @@ nmap gs <Plug>(coc-git-chunkinfo)
 
 " SPELLCHECK:
 set spelllang=en
+
+" MD-PREVIEW: 
+let vim_markdown_preview_hotkey='<leader>pr'
+let vim_markdown_preview_github=1
+
 " TIPS
 "-------------
 " press z= over word for suggestions
