@@ -13,19 +13,20 @@ call vundle#begin()
    " Plugin 'kien/rainbow_parentheses.vim'  " parentheses are colored, really useful for LISP languages
    Plugin 'machakann/vim-highlightedyank' " flashes when you yank something
    Plugin 'rhysd/committia.vim'           " really nice split screen in vim, with git changes and etc
-   Plugin 'RRethy/vim-hexokinase'         " adds colors rgb, and hex vals
+   " Plugin 'RRethy/vim-hexokinase'         " adds colors rgb, and hex vals
    Plugin 'tpope/vim-commentary'          " for commenting lines out
    Plugin 'tpope/vim-fugitive'            " a fancy git wrapper
    Plugin 'tpope/vim-repeat'              " lets you use . for repeating non-native commands
    Plugin 'tpope/vim-surround'            " surrounds text objects, words or lines
    Plugin 'VundleVim/Vundle.vim'          " manages all plugins and etc
-   Plugin 'wlangstroth/vim-racket'        " package for racket
+   " Plugin 'wlangstroth/vim-racket'        " package for racket
    Plugin 'scrooloose/nerdtree'           " nerd tree stuff
    " THIS IS STILL BEING TESTED
    Plugin 'pangloss/vim-javascript'       " javascript highlighting
-   Plugin 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}             " autocompleteion
+   Plugin 'git@github.com:neoclide/coc.nvim.git' " autocompleteion
    Plugin 'honza/vim-snippets'
    Plugin 'mattn/emmet-vim'
+   Plugin 'markonm/traces.vim' " substitute highlight?
 
 call vundle#end()
 
@@ -103,8 +104,8 @@ augroup myfiletypes
    " au filetype racket set lisp
    " set lisp " improves basic for indentation and web word hopping
    " autocmd FileType racket setlocal iskeyword+=?
-   autocmd FileType racket setlocal commentstring=;\ %s
-   autocmd FileType racket setlocal colorcolumn=120
+   " autocmd FileType racket setlocal commentstring=;\ %s
+   " autocmd FileType racket setlocal colorcolumn=120
 
    " C
    nmap <leader>cc :!make<CR>
@@ -116,6 +117,7 @@ augroup myfiletypes
    autocmd FileType html setlocal ai sw=2 sts=2 et
    autocmd FileType javascript setlocal ai sw=2 sts=2 et 
    autocmd FileType scss setlocal ai sw=2 sts=2 et 
+   autocmd FileType json setlocal ai sw=2 sts=2 et 
 
    " GIT 
    autocmd Filetype gitcommit setlocal spell textwidth=72
@@ -173,11 +175,12 @@ nmap 0 ^
 
 " some mappings
 map <C-t> <esc>:tabnew<CR>
-
+nnoremap <C-q> <C-x>
 map <C-x> <C-w>c
+
 " LEADER KEY: setting
 let mapleader = ","
-nmap <leader>js :%!python -m json.tool<CR>
+nmap <leader>js :%!jq .<CR>
 nmap <leader>vr :tabedit $MYVIMRC<CR>
 nmap <leader>so :source $MYVIMRC<CR> 
 nmap <leader>sy "+y
