@@ -199,11 +199,12 @@ nmap <leader>blo :tabnew ~/development/blog/<CR>
 nmap k gk
 nmap j gj
 
+" This breaks macros?
 " Fix alt keys
-execute "set <M-j>=\ej"
-nnoremap <M-j> j
-execute "set <M-k>=\ek"
-nnoremap <M-k> k
+" execute "set <M-j>=\ej"
+" nnoremap <M-j> j
+" execute "set <M-k>=\ek"
+" nnoremap <M-k> k
 
 " Shift lines up and down
 " nnoremap <A-j> :m .+1<CR>==
