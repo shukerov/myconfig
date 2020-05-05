@@ -66,3 +66,6 @@ stty -ixon
 source <(kubectl completion bash)
 # enable shell completion for alias too
 complete -F __start_kubectl k
+
+# vi mode
+set -o vi
