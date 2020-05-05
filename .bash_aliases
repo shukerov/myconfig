@@ -1,4 +1,5 @@
-# git aliases
+# GIT ALIASES
+#############
 alias gs='git status '
 alias ga='git add '
 alias gd='git diff'
@@ -6,14 +7,10 @@ alias gc='git commit'
 alias gpu='git push'
 alias gcmsg='git commit -m'
 alias gpr='git pull --rebase'
-alias glog='git log --all --graph --decorate'
+alias glog='git log --all --graph --decorate --oneline'
 
-# others
-alias ll="ls -lah"
-alias dos2unix="sed $'s/\r//' -i "
-alias tmux="tmux -2"
-
-# ssh aliases
+# SSH ALIASES
+#############
 alias taylor='ssh stoyan@home.thurlow.io'
 alias taylorsftp='sftp stoyan@home.thurlow.io'
 alias unix1='ssh sshukero@unix1.csc.calpoly.edu'
@@ -30,24 +27,61 @@ alias pi6='ssh sshukero@pi06.csc.calpoly.edu'
 alias pi7='ssh sshukero@pi07.csc.calpoly.edu'
 alias pi8='ssh sshukero@pi08.csc.calpoly.edu'
 
-# Docker aliases
+# PROGRAMING
+############
+# Docker/Kubernetes
 alias dc='docker-compose'
+alias k=kubectl
 
-# RoR aliases
+# RoR
 alias b='bundle'
 alias be='bundle exec'
 alias bi='bundle install --path=vendor'
 
-# middleman aliases
+# Middleman
 alias ms='be middleman s'
 
-# dir aliases
+# JS aliases
+alias nr='npm run '
+alias yr='yarn run '
+
+# PROGRAM SHORTCUTS
+###################
+alias rst='exec $SHELL'
+alias show='kitty +kitten icat '
+alias v='vim .'
+alias hack='~/Downloads/matrix.sh'
+alias ll="ls -lah"
+alias dos2unix="sed $'s/\r//' -i "
+alias tmux="tmux -2"
+# alias cd='command cd && ll'
+if command -v bat >/dev/null; then
+   alias cat='bat '
+fi
+
+# dotfiles configuarion aliases
+alias config='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
+
+# School aliases
+alias ratchet='racket -i -l typed/racket -l typed/rackunit' # racket start with right parameters
+
+# DIR ALIASES:
+##############
+
 alias down='cd ~/downloads'
 alias dev='cd ~/development'
 alias blog='cd ~/development/blog'
-alias senior='cd ~/development/senior_proj/website'
+alias senior='cd ~/development/senior_proj/website_js'
+alias sens='cd ~/development/senior_proj/website_js && npm run dev'
+
+# work
+alias car='cd ~/development/carterbrownlaw.github.io'
+alias nwh='cd ~/development/beesbot/northwesthealth1'
+alias pxb='cd ~/development/beesbot/px/px-backoffice'
 alias bee='cd ~/development/beesbot'
 alias bay='cd ~/development/beesbot/bayphoto'
+
+# school
 alias cs='cd ~/CS'
 alias 202='cd ~/CS/202'
 alias 300='cd ~/CS/300'
@@ -63,16 +97,3 @@ alias 453='cd ~/CS/453'
 alias 464='cd ~/CS/464'
 alias 480='cd ~/CS/480'
 alias noses='cd ~/development/noses'
-
-# program shortcuts
-alias rst='exec $SHELL'
-alias show='kitty +kitten icat '
-alias cat='bat '
-alias v='vim .'
-alias hack='~/Downloads/matrix.sh'
-
-# dotfiles configuarion aliases
-alias config='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'
-
-# School aliases
-alias ratchet='racket -i -l typed/racket -l typed/rackunit' # racket start with right parameters
