@@ -3,14 +3,11 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-   " Plugin 'airblade/vim-gitgutter'        " just a git gutter
    Plugin 'connorholyday/vim-snazzy'      " vim colorscheme
    Plugin 'ctrlpvim/ctrlp.vim'            " enables ctrl+p functionality similar to sublime
    Plugin 'eugen0329/vim-esearch'         " searching through multiple files
-   Plugin 'flazz/vim-colorschemes'        " colorschemes for vim
    Plugin 'jpalardy/vim-slime'            " sending text from vim to a tmux pane
    Plugin 'junegunn/rainbow_parentheses.vim'  " parentheses are colored, really useful for LISP languages
-   " Plugin 'kien/rainbow_parentheses.vim'  " parentheses are colored, really useful for LISP languages
    Plugin 'machakann/vim-highlightedyank' " flashes when you yank something
    Plugin 'rhysd/committia.vim'           " really nice split screen in vim, with git changes and etc
    " Plugin 'RRethy/vim-hexokinase'         " adds colors rgb, and hex vals
@@ -18,6 +15,7 @@ call vundle#begin()
    Plugin 'tpope/vim-fugitive'            " a fancy git wrapper
    Plugin 'tpope/vim-repeat'              " lets you use . for repeating non-native commands
    Plugin 'tpope/vim-surround'            " surrounds text objects, words or lines
+   Plugin 'tpope/vim-eunuch'              " vim sugar for the unix shell commands
    Plugin 'VundleVim/Vundle.vim'          " manages all plugins and etc
    " Plugin 'wlangstroth/vim-racket'        " package for racket
    Plugin 'scrooloose/nerdtree'           " nerd tree stuff
@@ -155,9 +153,8 @@ set backupdir=~/.tmp
 set directory=~/.tmp
 
 " colors
-" colorscheme BlackCherries
-colorscheme lena
-" colorscheme snazzy
+set termguicolors
+colorscheme ThemerVim
 
 " enable syntax highlighting
 " if !exists("g:syntax_on")
@@ -206,14 +203,6 @@ nmap j gj
 " execute "set <M-k>=\ek"
 " nnoremap <M-k> k
 
-" Shift lines up and down
-" nnoremap <A-j> :m .+1<CR>==
-" nnoremap <A-k> :m .-2<CR>==
-" inoremap <A-j> <Esc>:m .+1<CR>==gi
-" inoremap <A-k> <Esc>:m .-2<CR>==gi
-" vnoremap <A-j> :m '>+1<CR>gv=gv
-" vnoremap <A-k> :m '<-2<CR>gv=gv
-
 " command aliases for typoed commands
 command! Q q " both :q and :Q work identically
 
@@ -221,7 +210,6 @@ command! Q q " both :q and :Q work identically
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
-" set termguicolors
 " new things, should be distributed as you go
 " let g:Hexokinase_highlighters = ['background']
 " Enable for all filetypes
