@@ -183,6 +183,7 @@ nmap <leader>vr :tabedit $MYVIMRC<CR>
 nmap <leader>so :source $MYVIMRC<CR> 
 nmap <leader>sy "+y
 nmap <leader>al :tabnew ~/.bash_aliases<CR>
+nmap <leader>rel :set relativenumber!<CR>
 "emmet keymap
 nmap <leader>j $<C-y>, 
 " select all
