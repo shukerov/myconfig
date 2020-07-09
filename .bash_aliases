@@ -55,8 +55,8 @@ alias ll="ls -lah"
 alias dos2unix="sed $'s/\r//' -i "
 alias tmux="tmux -2"
 # alias cd='command cd && ll'
-if command -v bat >/dev/null; then
-   alias cat='bat '
+if command -v batcat >/dev/null; then
+   alias cat='batcat '
 fi
 
 # dotfiles configuarion aliases
@@ -77,7 +77,8 @@ alias sens='cd ~/development/senior_proj/website_js && npm run dev'
 # work
 alias car='cd ~/development/carterbrownlaw.github.io'
 alias nwh='cd ~/development/beesbot/northwesthealth1'
-alias pxb='cd ~/development/beesbot/px/px-backoffice'
+alias pxb='cd ~/development/beesbot/px/backoffice'
+alias pxv='cd ~/development/beesbot/px/pxvape'
 alias bee='cd ~/development/beesbot'
 alias bay='cd ~/development/beesbot/bayphoto'
 
