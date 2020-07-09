@@ -19,6 +19,12 @@ if [ -d ~/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+if [ -d ~/.nvm ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
 force_color_prompt=yes
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -59,13 +65,13 @@ fi
 
 # unbind Ctrl+S
 stty -ixon
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
 
-# enabling kubectl autocompletion
-source <(kubectl completion bash)
-# enable shell completion for alias too
-complete -F __start_kubectl k
+if command -v kubectl>/dev/null; then
+  # enabling kubectl autocompletion
+  source <(kubectl completion bash)
+  # enable shell completion for alias too
+  complete -F __start_kubectl k
+fi
 
 # vi mode
 set -o vi
