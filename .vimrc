@@ -154,7 +154,7 @@ set directory=~/.tmp
 
 " colors
 set termguicolors
-colorscheme ThemerVim
+colorscheme github
 
 " enable syntax highlighting
 " if !exists("g:syntax_on")
