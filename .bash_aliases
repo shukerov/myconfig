@@ -81,6 +81,7 @@ alias pxb='cd ~/development/beesbot/px/backoffice'
 alias pxv='cd ~/development/beesbot/px/pxvape'
 alias bee='cd ~/development/beesbot'
 alias bay='cd ~/development/beesbot/bayphoto'
+alias ant='cd ~/development/antelope-family/website'
 
 # school
 alias cs='cd ~/CS'

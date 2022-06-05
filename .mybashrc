@@ -74,4 +74,4 @@ if command -v kubectl>/dev/null; then
 fi
 
 # vi mode
-set -o vi
+# set -o vi

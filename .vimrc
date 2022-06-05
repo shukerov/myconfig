@@ -91,12 +91,10 @@ augroup myfiletypes
 
    " Python
    autocmd FileType python setlocal ai sw=2 sts=2 et
-   autocmd FileType python setlocal colorcolumn=80
 
    " SQL
    au BufReadPost *.sql set filetype=sql
    autocmd FileType sql setlocal commentstring=--\ %s
-   autocmd FileType sql setlocal colorcolumn=120
 
    " Racket   
    au BufReadPost *.rkt,*.rktl set filetype=racket
@@ -110,7 +108,6 @@ augroup myfiletypes
    nmap <leader>cc :!make<CR>
    nmap <leader>ct :!make test<CR>
    autocmd FileType c,cpp setlocal commentstring=//\ %s
-   autocmd FileType c,cpp setlocal colorcolumn=80
 
    " HTML/JS
    autocmd FileType html setlocal ai sw=2 sts=2 et
@@ -127,7 +124,7 @@ augroup myfiletypes
 
 augroup END
 
-set colorcolumn=80
+set colorcolumn=80,120
       
 " removes delay on escape
 set timeoutlen=1000 ttimeoutlen=0
